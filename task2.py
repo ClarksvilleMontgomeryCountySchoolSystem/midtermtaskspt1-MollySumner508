@@ -11,6 +11,7 @@ months_inactive = 8
 # Calculate how many full $20 bills and remaining dollars
 
 # Subtract withdrawal from balance
+balance = starting_balance
 balance = withdrawal_amount - starting_balance
 
 # Subtract ATM fee
@@ -22,9 +23,10 @@ balance -= total_monthly_fees
 
 # Calculate full $20 bills and remaining dollars
 full_twenties = balance // 20
+remaining_dollars = balance % 20 
 
 # Display results with f-strings
 print(f'Account Holder: {account_holder}')
 print(f'Remaining Balance: {balance}')
 print(f'Full $20 Bills {full_twenties}')
-print(f"Remaining Dollars {balance}")
+print(f"Remaining Dollars ${balance}")
